@@ -17,6 +17,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
                 onDelete = CASCADE))
 public class ModuleEntity {
     @PrimaryKey
+    @ColumnInfo(name = "id")
     public long id;
 
     @ColumnInfo(name = "module_name")

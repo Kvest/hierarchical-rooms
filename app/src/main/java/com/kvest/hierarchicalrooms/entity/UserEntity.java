@@ -10,6 +10,7 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "users")
 public class UserEntity {
     @PrimaryKey
+    @ColumnInfo(name = "id")
     public long id;
 
     @ColumnInfo(name = "user_name")

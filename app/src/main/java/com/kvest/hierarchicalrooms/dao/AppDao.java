@@ -9,6 +9,7 @@ import android.arch.persistence.room.Query;
 import com.kvest.hierarchicalrooms.entity.ModuleEntity;
 import com.kvest.hierarchicalrooms.entity.RepositoryEntity;
 import com.kvest.hierarchicalrooms.entity.UserEntity;
+import com.kvest.hierarchicalrooms.model.UserWithRepos;
 
 import java.util.List;
 
@@ -45,6 +46,6 @@ public abstract class AppDao {
     @Query("SELECT * FROM modules")
     public abstract List<ModuleEntity> getAllModules();
 
-//    @Query("SELECT * from user")
-//    public abstract List<UserWithRepos> getUsersWithRepos();
+    @Query("SELECT * from users")
+    public abstract List<UserWithRepos> getUsersWithRepos();
 }

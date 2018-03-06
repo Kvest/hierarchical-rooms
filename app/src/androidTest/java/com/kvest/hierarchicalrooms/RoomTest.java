@@ -8,12 +8,15 @@ import com.kvest.hierarchicalrooms.dao.AppDao;
 import com.kvest.hierarchicalrooms.entity.ModuleEntity;
 import com.kvest.hierarchicalrooms.entity.RepositoryEntity;
 import com.kvest.hierarchicalrooms.entity.UserEntity;
+import com.kvest.hierarchicalrooms.model.UserWithRepos;
 
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.util.List;
 
 import static junit.framework.Assert.*;
 
@@ -60,10 +63,9 @@ public class RoomTest {
         assertEquals(3, appDao.getAllRepos().size());
         assertEquals(4, appDao.getAllModules().size());
 
-        appDao.deleteUsers(USER1, USER2, USER3);
-        assertEquals(0, appDao.getAllUsers().size());
-        assertEquals(0, appDao.getAllRepos().size());
-        assertEquals(0, appDao.getAllModules().size());
+        List<UserWithRepos> usersWithRepos = appDao.getUsersWithRepos();
+        assertEquals(3, usersWithRepos.size());
+        //TODO check usersWithRepos data
     }
 
     @After

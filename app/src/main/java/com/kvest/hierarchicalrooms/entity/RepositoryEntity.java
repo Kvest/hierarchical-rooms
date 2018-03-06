@@ -16,6 +16,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
                 onDelete = CASCADE))
 public class RepositoryEntity {
     @PrimaryKey
+    @ColumnInfo(name = "id")
     public long id;
 
     @ColumnInfo(name = "repo_name")
